@@ -1,4 +1,3 @@
-
 ♻️ ZeroDump
 🌍 Turning waste into wisdom — one smart decision at a time
 
@@ -13,11 +12,11 @@ The system integrates Google Gemini AI for enhanced response and guidance, and F
 
 🚀 Features
 
-✅ Report illegal dumping with location and description
-✅ Locate the nearest authorized waste bins
-✅ View awareness tips and eco-friendly disposal methods
-✅ Simple and responsive web design
-✅ Secure and real-time data handling via Firebase
+⭐ Report illegal dumping with location and description
+⭐ Locate the nearest authorized waste bins
+⭐ View awareness tips and eco-friendly disposal methods
+⭐ Responsive and user-friendly web design
+⭐ Secure, real-time data handling via Firebase
 
 🛠️ Tech Stack
 Category	Technologies Used
@@ -26,27 +25,25 @@ Backend / Database	Firebase
 AI Integration	Google Gemini
 🧠 How It Works
 
-Users can report illegal waste dumping through the platform.
-
-Data is securely stored and managed using Firebase.
-
-The AI (Gemini) assists in categorizing and responding to reports.
-
-Users can easily find the nearest bin location for proper disposal.
+1️⃣ Users can report illegal waste dumping through the platform.
+2️⃣ Data is securely stored and managed using Firebase.
+3️⃣ Gemini AI assists in categorizing and responding to reports.
+4️⃣ Users can easily find the nearest bin for proper disposal.
 
 🧑‍💻 Team ZeroDump
-Member	Role
-Minhu	Frontend Developer / Presentation Lead
-<Teammate 1>	Backend Developer
-<Teammate 2>	AI Integration
-<Teammate 3>	UI/UX Designer
+Member-Role
+Minhu P- Developer / Presentation Lead
+Kameshwar M-Developer
+Magesh Anand U-Research work
+Naveena B- PPT 
 🏆 Achievements
 
 🏅 Developed during TechSprint 2026
-💡 Recognized for its focus on sustainable digital waste management
+💡 Recognized for innovation in digital sustainability
 🌱 Encouraging community-driven environmental responsibility
 
 🌿 Acknowledgments
 
 Special thanks to our mentors, organizers, and everyone who supported ZeroDump throughout its journey.
 Together, let’s create cleaner spaces and a smarter tomorrow 🌏💚
+
