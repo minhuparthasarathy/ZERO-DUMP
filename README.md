@@ -32,10 +32,10 @@ AI Integration	Google Gemini
 
 🧑‍💻 Team ZeroDump
 Member-Role
-Minhu P- Developer / Presentation Lead
-Kameshwar M-Developer
-Magesh Anand U-Research work
-Naveena B- PPT 
+Minhu P- Developer / Presentation Lead ||
+Kameshwar M-Developer ||
+Magesh Anand U-Research work ||
+Naveena B- PPT ||
 🏆 Achievements
 
 🏅 Developed during TechSprint 2026
