@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ACHIEVEMENTS</title>
+    <style>
+        /* Body & background */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #a8e6a2, #00c853);
+            text-align: center;
+        }
+
+        /* Navbar (same as homepage) */
+ nav {
+      width: 100%;
+      background: #e8fff0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 60px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo-text {
+      color: #004d00;
+      font-weight: 800;
+      font-size: 1.2rem;
+      letter-spacing: 0.5px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #003d00;
+      font-weight: 700;
+      font-size: 1.05rem;
+      transition: all 0.3s ease;
+      border-radius: 8px;
+      padding: 8px 16px;
+    }
+
+    nav a:hover {
+      background-color: #00c853;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+        /* Headings */
+        h1 {
+            font-size: 48px;
+            font-weight: bold;
+            color: rgb(0, 33, 62);
+            margin-top: 30px;
+        }
+
+        h3 {
+            font-size: 22px;
+            color: rgb(0, 33, 62);
+            margin-bottom: 40px;
+        }
+
+        /* Achievements Grid */
+        .achievements-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            justify-items: center;
+            width: 85%;
+            margin: 0 auto 60px auto;
+        }
+
+        .card {
+            background-color: #ffffff;
+            color: rgb(0, 33, 62);
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 300px;
+            padding: 25px 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            background-color: #e6ffe6; /* soft green pop */
+        }
+
+        .card h5 {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 0;
+            color: #003300;
+        }
+
+        /* Responsive layout */
+        @media (max-width: 900px) {
+            .achievements-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .achievements-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+  
+  <nav>
+    <div class="logo-text">ZERO DUMP</div>
+    <ul>
+      <li><a href="home page.html">HOME</a></li>
+      <li><a href="LOCATE BIN PAGE.html">LOCATOR</a></li>
+      <li><a href="report.html">REPORT</a></li>
+      <li><a href="about-us.html">ABOUT US</a></li>
+    </ul>
+  </nav>
+    <h1>ZERO DUMP ♻️🗑️</h1>
+    <h3>WASTE MANAGEMENT AND RECYCLING LOCATOR</h3>
+
+    <div class="achievements-container">
+        <div class="card">
+            <h5>🏆 Top 10 finalist at EcoInnovate Hackathon 2026.</h5>
+        </div>
+        <div class="card">
+            <h5>🌿 Recognized for promoting smart waste disposal.</h5>
+        </div>
+        <div class="card">
+            <h5>💡 Prototype showcased at Campus Innovation Expo.</h5>
+        </div>
+        <div class="card">
+            <h5>🚮 Reduced illegal dumping in local demo tests.</h5>
+        </div>
+        <div class="card">
+            <h5>🤖 Integrated Gemini AI with 90% accuracy.</h5>
+        </div>
+        <div class="card">
+            <h5>👥 Partnered with students for eco-awareness drives.</h5>
+        </div>
+    </div>
+</body>
+</html>

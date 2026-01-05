@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Terms & Conditions</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(135deg, #a8e6a2, #00c853);
+      text-align: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* Navbar - same as homepage */
+   nav {
+      width: 100%;
+      background: #e8fff0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 60px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo-text {
+      color: #004d00;
+      font-weight: 800;
+      font-size: 1.2rem;
+      letter-spacing: 0.5px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #003d00;
+      font-weight: 700;
+      font-size: 1.05rem;
+      transition: all 0.3s ease;
+      border-radius: 8px;
+      padding: 8px 16px;
+    }
+
+    nav a:hover {
+      background-color: #00c853;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+
+    /* Heading */
+    h1 {
+      font-size: 42px;
+      margin-top: 25px;
+      color: rgb(0, 33, 62);
+    }
+
+    h2 {
+      color: rgb(0, 33, 62);
+      margin-bottom: 15px;
+    }
+
+    /* Terms container */
+    .terms-container {
+      width: 70%;
+      max-width: 800px;
+      margin: 30px auto;
+      background-color: white;
+      border-radius: 12px;
+      padding: 25px 30px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      text-align: left;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+
+    .terms-container p {
+      font-size: 16px;
+      color: rgb(0, 33, 62);
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .terms-container strong {
+      color: #003300;
+    }
+
+    /* Buttons */
+    #accept, #decline {
+      border: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-size: 16px;
+      margin: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      color: white;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    #accept {
+      background: linear-gradient(45deg, #28a745, #00c853);
+    }
+
+    #decline {
+      background: linear-gradient(45deg, #ff6b6b, #f06595);
+    }
+
+    #accept:hover, #decline:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="logo-text">ZERO DUMP</div>
+    <ul>
+      <li><a href="home page.html">HOME</a></li>
+      <li><a href="LOCATE BIN PAGE.html">LOCATOR</a></li>
+      <li><a href="report.html">REPORT</a></li>
+      <li><a href="about-us.html">ABOUT US</a></li>
+    </ul>
+  </nav>
+   
+  <h1>ZERO DUMP ♻️🗑️</h1>
+  <h3>WASTE MANAGEMENT AND RECYCLING LOCATOR</h3>
+
+  <div class="terms-container">
+    <p>Welcome to ZeroDump! Before using our platform, please read these terms carefully.</p>
+
+    <p><strong>1. Acceptance of Terms:</strong> By using ZeroDump, you agree to follow these guidelines and terms. If you do not accept, please refrain from using the platform.</p>
+
+    <p><strong>2. Data Usage:</strong> ZeroDump may use data like your location to provide services. Your privacy is important and data is not shared with third parties without consent.</p>
+
+    <p><strong>3. User Responsibilities:</strong> You are responsible for using the app responsibly. Do not misuse the reporting system or submit false information.</p>
+
+    <p><strong>4. AI Verification:</strong> ZeroDump’s AI provides guidance, but may not always be 100% accurate. Users should verify critical information independently.</p>
+
+    <p><strong>5. Liability:</strong> ZeroDump is not liable for damages arising from misuse, incorrect reporting, or reliance on AI suggestions.</p>
+
+    <p><strong>6. Changes:</strong> We may update these terms occasionally. Continued use indicates acceptance of updated terms.</p>
+
+    <p><strong>7. Governing Law:</strong> These terms are governed by the laws of India.</p>
+  </div>
+
+  <p>Do you accept these terms and conditions?</p>
+  <button id="accept">Accept ✅</button>
+  <button id="decline">Decline ❌</button>
+
+  <script>
+    let acc = document.getElementById("accept");
+    acc.addEventListener("click", () => {
+      confirm("By clicking accept, you agree to all terms and conditions of ZeroDump.");
+    });
+
+    let dec = document.getElementById("decline");
+    dec.addEventListener("click", () => {
+      alert("You must accept the terms and conditions to use all features of ZeroDump.");
+    });
+  </script>
+</body>
+</html>

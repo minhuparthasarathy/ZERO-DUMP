@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ABOUT US</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #a8e6a2, #00c853);
+            display: grid;
+            grid-template-rows: auto auto 1fr auto;
+            grid-template-columns: 1fr 300px;
+            grid-template-areas:
+                "nav nav"
+                "heading heading"
+                "main buttons";
+            height: 100vh;
+        }
+      nav {
+      width:100%;
+      background: #e8fff0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 60px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      
+    } 
+    .logo-text {
+      color: #004d00;
+      font-weight: 800;
+      font-size: 1.2rem;
+      letter-spacing: 0.5px;
+    } 
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #003d00;
+      font-weight: 700;
+      font-size: 1.05rem;
+      transition: all 0.3s ease;
+      border-radius: 8px;
+      padding: 8px 16px;
+    }
+
+    nav a:hover {
+      background-color: #00c853;
+      color: white;
+      transform: translateY(-2px);
+    }
+        header {
+            grid-area: heading;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            color: rgb(0, 33, 62);
+            margin-bottom: 10px;
+            text-shadow: 1px 2px 6px rgba(0,0,0,0.25);
+        }
+
+        header h3 {
+            font-size: 1.6rem;
+            color: #004d00;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        main {
+            grid-area: main;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+        }
+
+        .info {
+            background-color: white;
+            border-radius: 15px;
+            padding: 35px;
+            width: 85%;
+            max-width: 700px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            color: rgb(0, 33, 62);
+            font-weight: 600;
+            font-size: 1.25rem;
+            line-height: 1.8;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s forwards;
+            animation-delay: 0.3s;
+        }
+
+        .info li {
+            margin: 14px 0;
+        }
+
+        .buttons {
+            grid-area: buttons;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: stretch;
+            padding: 40px;
+            gap: 25px;
+        }
+
+        .buttons button {
+            padding: 18px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
+
+        .buttons button:hover {
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+        }
+
+        #achievements { background: linear-gradient(45deg, #ff6b6b, #f06595); }
+        #why { background: linear-gradient(45deg, #ffa500, #ffc107); }
+        #tc { background: linear-gradient(45deg, #1e90ff, #00bfff); }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 900px) {
+            body {
+                grid-template-columns: 1fr;
+                grid-template-areas:
+                    "nav"
+                    "heading"
+                    "main"
+                    "buttons";
+            }
+            .buttons {
+                flex-direction: row;
+                justify-content: center;
+                gap: 15px;
+                padding: 20px;
+            }
+            header {
+                margin-top: 30px;
+            }
+            .info {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo-text">ZERO DUMP</div>
+    <ul>
+      <li><a href="home page.html">HOME</a></li>
+      <li><a href="LOCATE BIN PAGE.html">LOCATOR</a></li>
+      <li><a href="report.html">REPORT</a></li>
+      <li><a href="about-us.html">ABOUT US</a></li>
+    </ul>
+  </nav>
+
+    <header>
+        <h1>ZERO DUMP ♻️🗑️</h1>
+        <h3>WASTE MANAGEMENT AND RECYCLING LOCATOR</h3>
+    </header>
+
+    <main>
+        <ul class="info">
+            <li>We build ZeroDump, an AI-powered waste management assistant for smarter, cleaner living.</li>
+            <li>We help users locate nearby bins and recycling spots with ease.</li>
+            <li>Our AI verifies and explains illegal dumping areas instantly.</li>
+            <li>We aim to make waste disposal simple, responsible, and tech-driven.</li>
+            <li>Our vision is a cleaner planet powered by everyday smart actions.</li>
+        </ul>
+    </main>
+
+    <div class="buttons">
+        <button id="achievements">ACHIEVEMENTS</button>
+        <button id="why">WHY ZERO DUMP?</button>
+        <button id="tc">TERMS AND CONDITIONS</button>
+    </div>
+
+    <script>
+        let ach=document.getElementById("achievements");
+        ach.addEventListener("click",()=>{ window.location.href="achievements.html"; });
+
+        let why=document.getElementById("why");
+        why.addEventListener("click",()=>{ window.location.href="why-zerodump.html"; });
+
+        let tc=document.getElementById("tc");
+        tc.addEventListener("click",()=>{ window.location.href="terms and conditions.html"; });
+    </script>
+</body>
+</html>

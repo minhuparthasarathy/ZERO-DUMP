@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login Page - Zero Dump</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Login to Zero Dump and join our eco-friendly waste management platform.">
+    <style>
+        * {
+            color: #1a1a1a; /* Dark text for readability */
+            box-sizing: border-box;
+        }
+        body {
+            background: linear-gradient(135deg, #b6f0b4, #00d26a);
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .head {
+            text-align: center;
+            font-size: 3em;
+            font-weight: bold;
+            margin: 50px 0 10px 0;
+            color: #2e7d32; /* Dark green */
+            text-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .tagline {
+            font-size: 1.2em;
+            color: #2e7d32;
+            margin-bottom: 40px;
+        }
+        .logbox {
+            text-align: center;
+            padding: 40px 50px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid #66bb6a; /* Medium green border */
+            width: fit-content;
+            border-radius: 30px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        .logbox h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #2e7d32;
+        }
+        .logbox label {
+            display: block;
+            margin: 15px 0 5px 0;
+            font-weight: bold;
+        }
+        .logbox input {
+            width: 250px;
+            padding: 8px 10px;
+            border: 2px solid #66bb6a;
+            border-radius: 8px;
+            outline: none;
+            font-size: 1em;
+        }
+        #lg {
+            width: 200px;
+            height: 40px;
+            background: linear-gradient(135deg, #66bb6a 0%, #43a047 100%);
+            color: white;
+            font-size: 1em;
+            font-weight: bold;
+            border-radius: 10px;
+            border: none;
+            margin-top: 25px;
+        }
+        #lg:hover {
+            opacity: 0.85;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        a {
+            color: #2e7d32;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #66bb6a;
+            transition: 0.3s;
+        }
+        h3 {
+            color: #388e3c;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="head">ZERO DUMP</h1>
+    <div class="tagline">Making waste management smarter and eco-friendly</div>
+
+    <section class="logbox">
+        <h3><b><i>Login or Signup to have a better experience!</i></b></h3><br>
+        <h2>Login</h2>
+        <label>Username:
+            <input type="text" id="u" placeholder="Enter your username">
+        </label>
+        <label>Password:
+            <input type="password" id="pa3" placeholder="Enter your password">
+        </label>
+        <button id="lg">Login</button>
+        <br><br>
+        <a href="signup.html">Back to Sign Up</a>
+    </section>
+
+    <script>
+        let u = document.getElementById("u");
+        let pa3 = document.getElementById("pa3");
+        let lg = document.getElementById("lg");
+
+        lg.addEventListener("click", function() {
+            if(u.value == ""){
+                alert("Username cannot be empty");
+                return;
+            }
+            if(pa3.value == ""){
+                alert("Password cannot be empty");
+                return;
+            }
+            else{
+                confirm("Log In successful!");
+                window.location.href = "home page.html";
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ZERO DUMP ♻️🗑️</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #b6f0b4, #00d26a);
+      color: #0a0a0a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      min-height: 100vh;
+    }
+
+    nav {
+      width:100%;
+      background: #e8fff0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0  40px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      
+    }
+     
+    .logo-text {
+      color: #004d00;
+      font-weight: 800;
+      font-size: 1.2rem;
+      letter-spacing: 0.5px;
+      margin-right: auto;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+      padding: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #003d00;
+      font-weight: 700;
+      font-size: 1.05rem;
+      transition: all 0.3s ease;
+      border-radius: 8px;
+      padding: 8px 16px;
+    }
+
+    nav a:hover {
+      background-color: #00c853;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      margin: 50px 0 10px 0;
+      color: #003d00;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.25);
+    }
+
+    h3 {
+      font-size: 1.8rem;
+      margin-bottom: 40px;
+      font-weight: 600;
+      color: #006600;
+    }
+
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 90%;
+      max-width: 1200px;
+      height: 75vh;
+      gap: 50px;
+      margin-top: -30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+    }
+
+    button {
+      background: linear-gradient(135deg, #ff9100, #ffb74d);
+      border: none;
+      padding: 22px 70px;
+      font-size: 1.3rem;
+      font-weight: 800;
+      border-radius: 18px;
+      cursor: pointer;
+      color: white;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+      transition: all 0.35s ease;
+    }
+
+    button:hover {
+      transform: translateY(-6px) scale(1.05);
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
+      background: linear-gradient(135deg, #ff9800, #ffc107);
+    }
+
+    .logo-container {
+      width: 550px;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      border-radius: 25px;
+      background-color: #ffffff;
+      padding: 30px;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+
+    .logo-container:hover {
+      transform: scale(1.07);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    .logo-container img {
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+    }
+
+    @media(max-width:900px) {
+      .hero {
+        flex-direction: column-reverse;
+        height: auto;
+        margin-top: 0;
+        text-align: center;
+      }
+      .logo-container {
+        width: 80%;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo-text">ZERO DUMP</div>
+    <ul>
+      <li><a href="home page.html">HOME</a></li>
+      <li><a href="LOCATE BIN PAGE.html">LOCATOR</a></li>
+      <li><a href="report.html">REPORT</a></li>
+      <li><a href="about-us.html">ABOUT US</a></li>
+    </ul>
+  </nav>
+
+  <h1>ZERO DUMP ♻️🗑️</h1>
+  <h3>WASTE MANAGEMENT AND RECYCLING LOCATOR</h3>
+
+  <div class="hero">
+    <div class="hero-buttons">
+      <button id="login">LOG IN</button>
+      <button id="signup">SIGN UP</button>
+    </div>
+    <div class="logo-container">
+      <img src="zero dump logo.jpg" alt="zerodump-logo">
+    </div>
+  </div>
+
+</body>
+</html>

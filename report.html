@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ZeroDump – Report Dumping</title>
+  <style>
+   body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #b6f0b4, #00d26a);
+      color: #0a0a0a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      min-height: 100vh;
+    }
+
+    nav {
+      width: 100%;
+      background: #e8fff0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 60px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo-text {
+      color: #004d00;
+      font-weight: 800;
+      font-size: 1.2rem;
+      letter-spacing: 0.5px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #003d00;
+      font-weight: 700;
+      font-size: 1.05rem;
+      transition: all 0.3s ease;
+      border-radius: 8px;
+      padding: 8px 16px;
+    }
+
+    nav a:hover {
+      background-color: #00c853;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      margin: 50px 0 10px 0;
+      color: #003d00;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.25);
+    }
+
+    h3 {
+      font-size: 1.8rem;
+      margin-bottom: 40px;
+      font-weight: 600;
+      color: #006600;
+    }
+
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 90%;
+      max-width: 1200px;
+      height: 75vh;
+      gap: 50px;
+      margin-top: -30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+    }
+
+    button {
+      background: linear-gradient(135deg, #ff9100, #ffb74d);
+      border: none;
+      padding: 22px 70px;
+      font-size: 1.3rem;
+      font-weight: 800;
+      border-radius: 18px;
+      cursor: pointer;
+      color: white;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+      transition: all 0.35s ease;
+    }
+
+    button:hover {
+      transform: translateY(-6px) scale(1.05);
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
+      background: linear-gradient(135deg, #ff9800, #ffc107);
+    }
+
+    .logo-container {
+      width: 550px;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      border-radius: 25px;
+      background-color: #ffffff;
+      padding: 30px;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+
+    .logo-container:hover {
+      transform: scale(1.07);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    .logo-container img {
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+    }
+
+    @media(max-width:900px) {
+      .hero {
+        flex-direction: column-reverse;
+        height: auto;
+        margin-top: 0;
+        text-align: center;
+      }
+      .logo-container {
+        width: 80%;
+      }
+    }
+    h2 {
+      color: #166534;
+      text-align: center;
+    }
+    #map {
+      width: 600px;
+      height: 500px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+    input, button {
+      width: 100%;
+      margin-top: 10px;
+      padding: 10px;
+    }
+    button {
+      background: #16a34a;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+    #container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin: 20px;
+        backdrop-filter: blur(120px);
+        background-color: rgba(30, 28, 28, 0.3);
+        border-radius: 15px;
+        padding: 20px;
+    }
+    #REPORT{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding: 10px;
+    }
+  </style>
+</head>
+<body>
+<nav>
+    <div class="logo-text">ZERO DUMP</div>
+    <ul>
+      <li><a href="home page.html">HOME</a></li>
+      <li><a href="LOCATE BIN PAGE.html">LOCATOR</a></li>
+      <li><a href="report.html">REPORT</a></li>
+      <li><a href="about-us.html">ABOUT US</a></li>
+    </ul>
+  </nav><BR>
+<h2>♻ Report Illegal Dump</h2>
+<DIV id="container">
+<div id="map"></div>
+<DIV id="REPORT">
+<label for="imageInput">Upload Image:</label>
+<input type="file" id="imageInput" accept="image/*">
+<label for="description">Describe the Issue:</label>
+<input type="text" id="description" placeholder="DESCRIBE THE ISSUE...">
+<label for="illegalCheckbox">FEELS ILLEGAL</label>
+<input type="checkbox" id="illegalCheckbox">
+<LABEL FOR="TRASH DUMPED">TRASH DUMPED</LABEL>
+<INPUT type="checkbox"></INPUT>
+<button>ASK AI</button>
+
+<button onclick="submitReport()">🚨 Report Dump</button>
+</DIV></DIV>
+<script>
+  let map;
+  let marker = null;
+  let selectedLocation = null;
+
+  function initMap() {
+    navigator.geolocation.getCurrentPosition(pos => {
+      const userLoc = {
+        lat: pos.coords.latitude,
+        lng: pos.coords.longitude
+      };
+
+      map = new google.maps.Map(document.getElementById("map"), {
+        center: userLoc,
+        zoom: 15
+      });
+
+      // User current location marker
+      new google.maps.Marker({
+        position: userLoc,
+        map: map,
+        label: "You"
+      });
+
+      // Click to drop pin
+      map.addListener("click", e => {
+        selectedLocation = e.latLng;
+
+        if (marker) marker.setMap(null);
+
+        marker = new google.maps.Marker({
+          position: selectedLocation,
+          map: map,
+          icon: "http://maps.google.com/mapfiles/ms/icons/red-dot.png"
+        });
+      });
+    });
+  }
+
+  function submitReport() {
+    const file = document.getElementById("imageInput").files[0];
+
+    if (!selectedLocation) {
+      alert("Please pin the dumping location on map");
+      return;
+    }
+
+    if (!file) {
+      alert("Please upload an image");
+      return;
+    }
+
+    alert("✅ Report placed successfully!");
+  }
+</script>
+
+<!-- Google Maps JS API -->
+<script async
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhsX9LSP2N5kWDDmfRdRxk4d38NUwTvLE&callback=initMap">
+</script>
+
+</body>
+</html>

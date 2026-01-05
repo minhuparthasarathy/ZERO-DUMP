@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WHY ZER0-DUMP?</title>
+    <style>
+        body {
+            max-height: 100vh;
+            background: linear-gradient(135deg, #a8e6a2, #00c853);
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+   nav {
+      width: 100%;
+      background: #e8fff0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 60px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo-text {
+      color: #004d00;
+      font-weight: 800;
+      font-size: 1.2rem;
+      letter-spacing: 0.5px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #003d00;
+      font-weight: 700;
+      font-size: 1.05rem;
+      transition: all 0.3s ease;
+      border-radius: 8px;
+      padding: 8px 16px;
+    }
+
+    nav a:hover {
+      background-color: #00c853;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 250px;
+            z-index: 999;
+            display: none;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: flex-start;
+            background-color: rgba(0, 0, 0, 0.733);
+        }
+
+        .sidebar li {
+            width: 100%;
+        }
+
+        .sidebar a {
+            width: 100%;
+            color: aliceblue;
+            padding: 10px;
+        }
+
+        .menu {
+            display: none;
+        }
+
+        @media(max-width: 800px) {
+            .hideonmobile {
+                display: none;
+            }
+
+            .menu {
+                display: block;
+            }
+        }
+
+        @media(max-width: 400px) {
+            .sidebar {
+                width: 100%;
+            }
+        }
+
+        .why-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 700px;
+            margin: 20px auto;
+        }
+
+        .why-card {
+            background: #e8f5e9;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px 20px;
+        }
+
+        details summary {
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            color: #004d00;
+        }
+
+        details p {
+            margin-top: 10px;
+            line-height: 1.4;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <div class="logo-text">ZERO DUMP</div>
+    <ul>
+      <li><a href="home page.html">HOME</a></li>
+      <li><a href="LOCATE BIN PAGE.html">LOCATOR</a></li>
+      <li><a href="report.html">REPORT</a></li>
+      <li><a href="about-us.html">ABOUT US</a></li>
+    </ul>
+  </nav>
+    <center>
+    <h1>ZERO DUMP♻️🗑️</h1>
+    <h3>WASTE MANAGEMENT AND RECYCLING LOCATOR</h3>
+    </center>
+
+    <div class="why-container">
+        <div class="why-card">
+            <details>
+                <summary> Because every small action matters.</summary>
+                <p>ZeroDump turns everyday waste disposal into a smart, responsible act -making sustainability effortless for everyone.</p>
+            </details>
+        </div>
+
+        <div class="why-card">
+            <details>
+                <summary> Because finding the right bin shouldn’t be hard.</summary>
+                <p>With real-time location guidance, ZeroDump helps you locate the nearest bins and recycling spots in seconds.</p>
+            </details>
+        </div>
+
+        <div class="why-card">
+            <details>
+                <summary> Because awareness leads to change.</summary>
+                <p>Our AI doesn’t just guide,it educates... By explaining why a dumping spot is legal or illegal, it builds a more informed community.</p>
+            </details>
+        </div>
+         <div class="why-card">
+            <details>
+                <summary>Because technology can serve the planet.</summary>
+                <p>ZeroDump blends AI and geolocation to solve a real-world issue,waste mismanagement with intelligent simplicity.</p>
+            </details>
+        </div>
+        <div class="why-card">
+            <details>
+                <summary>Because we believe in cleaner tomorrows.</summary>
+                <p>Every report, every responsible disposal, every click on ZeroDump brings us one step closer to a sustainable future.</p>
+            </details>
+        </div>
+    </div>
+
+    <script>
+        function showsidebar() {
+            document.querySelector('.sidebar').style.display = 'flex';
+        }
+        function hidesidebar() {
+            document.querySelector('.sidebar').style.display = 'none';
+        }
+    </script>
+    
+</body>
+</html>

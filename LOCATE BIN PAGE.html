@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Locate Bin</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <STYLE>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #b6f0b4, #00d26a);
+            color: #0a0a0a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            min-height: 100vh;
+        }
+
+        nav {
+            width: 100%;
+            background: #e8fff0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0px 0px 0 40px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            height: fit-content;
+        }
+
+        .logo-text {
+            color: #004d00;
+            font-weight: 800;
+            font-size: 1.2rem;
+            letter-spacing: 0.5px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 40px;
+            padding: 10px;
+
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #003d00;
+            font-weight: 700;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            padding: 8px 16px;
+        }
+
+        nav a:hover {
+            background-color: #00c853;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin: 50px 0 10px 0;
+            color: #003d00;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            margin-bottom: 40px;
+            font-weight: 600;
+            color: #006600;
+        }
+
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            max-width: 1200px;
+            height: 75vh;
+            gap: 50px;
+            margin-top: -30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+        }
+
+        button {
+            background: linear-gradient(135deg, #ff9100, #ffb74d);
+            border: none;
+            padding: 22px 70px;
+            font-size: 1.3rem;
+            font-weight: 800;
+            border-radius: 18px;
+            cursor: pointer;
+            color: white;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+            transition: all 0.35s ease;
+        }
+
+        button:hover {
+            transform: translateY(-6px) scale(1.05);
+            box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
+            background: linear-gradient(135deg, #ff9800, #ffc107);
+        }
+
+        .logo-container {
+            width: 550px;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            border-radius: 25px;
+            background-color: #ffffff;
+            padding: 30px;
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .logo-container:hover {
+            transform: scale(1.07);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+        }
+
+        @media(max-width:900px) {
+            .hero {
+                flex-direction: column-reverse;
+                height: auto;
+                margin-top: 0;
+                text-align: center;
+            }
+
+            .logo-container {
+                width: 80%;
+            }
+        }
+
+        #result {
+            background-color: rgb(218, 212, 212);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            margin: 20px;
+            backdrop-filter: blur(120px);
+            background-color: rgba(30, 28, 28, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+        }
+
+        .details {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+
+        #map {
+            flex-grow: 1;
+            margin-right: 20px;
+            height: 400px;
+            width: 600px;
+        }
+    </STYLE>
+
+
+</head>
+
+<body>
+    <nav>
+        <div class="logo-text">ZERO DUMP</div>
+        <ul>
+            <li><a href="home page.html">HOME</a></li>
+            <li><a href="LOCATE BIN PAGE.html">LOCATOR</a></li>
+            <li><a href="report.html">REPORT</a></li>
+            <li><a href="about-us.html">ABOUT US</a></li>
+        </ul>
+    </nav><BR>
+    <div id="result">
+        <h2>LOCATE BIN PAGE</h2>
+        <p>This is the locate bin page content.</p>
+        <button onclick="loadMap()">Locate Bin</button>
+    </div>
+    <section class="container">
+        <div id="map"></div>
+        <div id="info">
+            <b>STATUS</b>
+            <P id="status">Click the button to locate bin.</P>
+        </div>
+    </section>
+    <script>
+        function showsidebar() {
+            document.querySelector('.sidebar').style.display = 'flex';
+        }
+        function hidesidebar() {
+            document.querySelector('.sidebar').style.display = 'none';
+        }
+        let map;
+
+        /* ---------------- BIN DATA ---------------- */
+        const bins = [
+            { lat: 9.910341, lng: 78.127036, type: "Recyclable" },
+            { lat: 9.91359, lng: 78.127062, type: "Biodegradable" },
+            { lat: 9.912088, lng: 78.129274, type: "E-Waste" }
+        ];
+
+        /* ------------ ICONS BY TYPE --------------- */
+        function getIcon(type) {
+            if (type === "Recyclable")
+                return "https://maps.google.com/mapfiles/ms/icons/green-dot.png";
+            if (type === "Biodegradable")
+                return "https://maps.google.com/mapfiles/ms/icons/yellow-dot.png";
+            return "https://maps.google.com/mapfiles/ms/icons/red-dot.png";
+        }
+
+        /* -------- DISTANCE FORMULA (KM) ----------- */
+        function distance(lat1, lon1, lat2, lon2) {
+            const R = 6371;
+            const dLat = (lat2 - lat1) * Math.PI / 180;
+            const dLon = (lon2 - lon1) * Math.PI / 180;
+            const a =
+                Math.sin(dLat / 2) ** 2 +
+                Math.cos(lat1 * Math.PI / 180) *
+                Math.cos(lat2 * Math.PI / 180) *
+                Math.sin(dLon / 2) ** 2;
+            return R * (2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)));
+        }
+
+        /* -------- MAP INIT (CALLED BY GOOGLE) ------ */
+        function initMap() {
+            document.getElementById("status").innerText =
+                "Click the button to locate nearest bin.";
+        }
+
+        /* ------------- MAIN FUNCTION -------------- */
+        function loadMap() {
+            document.getElementById("status").innerText = "📍 Fetching your location...";
+
+            navigator.geolocation.getCurrentPosition(pos => {
+                const userLoc = {
+                    lat: pos.coords.latitude,
+                    lng: pos.coords.longitude
+                };
+
+                map = new google.maps.Map(document.getElementById("map"), {
+                    center: userLoc,
+                    zoom: 15
+                });
+
+                new google.maps.Marker({
+                    position: userLoc,
+                    map,
+                    label: "You"
+                });
+
+                let nearest = null;
+                let minDist = Infinity;
+
+                bins.forEach(bin => {
+                    const d = distance(userLoc.lat, userLoc.lng, bin.lat, bin.lng);
+                    if (d < minDist) {
+                        minDist = d;
+                        nearest = bin;
+                    }
+
+                    new google.maps.Marker({
+                        position: bin,
+                        map,
+                        icon: getIcon(bin.type)
+                    });
+                });
+
+                const directionsService = new google.maps.DirectionsService();
+                const directionsRenderer = new google.maps.DirectionsRenderer({ map });
+
+                directionsService.route(
+                    {
+                        origin: userLoc,
+                        destination: nearest,
+                        travelMode: google.maps.TravelMode.WALKING
+                    },
+                    (result, status) => {
+                        if (status === "OK") directionsRenderer.setDirections(result);
+                    }
+                );
+
+                document.getElementById("status").innerHTML = `
+      ✅ Nearest Bin Found <br>
+      🗑 Type: <b>${nearest.type}</b><br>
+      📏 Distance: <b>${minDist.toFixed(2)} km</b>
+    `;
+            },
+                () => {
+                    document.getElementById("status").innerText =
+                        "❌ Location permission denied.";
+                });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCY6EJCc_PT75lkrsOYWuv3P50Q05oZMBE&callback=initMap"
+        async defer>
+        </script>
+
+</body>
+
+</html>
